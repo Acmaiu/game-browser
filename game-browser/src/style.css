@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111318;
+  color: #f1f3f5;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  background: transparent;
+}
+
+.browser {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* タブバー */
+.tab-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 8px 0;
+  background: #191b22;
+  min-height: 46px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 200px;
+  max-width: 30%;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 8px 8px 0 0;
+  background: #252832;
+  color: #aeb4c0;
+  cursor: pointer;
+}
+
+.tab span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tab.active {
+  background: #111318;
+  color: #ffffff;
+}
+
+.tab button {
+  flex-shrink: 0;
+  font-size: 18px;
+  color: #aeb4c0;
+}
+
+.tab button:hover {
+  color: #ff6868;
+}
+
+.new-tab {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  font-size: 23px;
+}
+
+.new-tab:hover,
+.browser-toolbar button:hover {
+  background: #343844;
+}
+
+/* ツールバー */
+.browser-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #191b22;
+  border-bottom: 1px solid #30333d;
+}
+
+.browser-toolbar > button {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 22px;
+}
+
+.browser-toolbar form {
+  flex: 1;
+  min-width: 0;
+}
+
+.browser-toolbar input {
+  width: 100%;
+  height: 38px;
+  padding: 0 15px;
+  outline: none;
+  border: 1px solid #343844;
+  border-radius: 20px;
+  background: #252832;
+  color: #ffffff;
+}
+
+.browser-toolbar input:focus {
+  border-color: #6b8cff;
+}
+
+.browser-toolbar input::placeholder {
+  color: #9298a6;
+}
+
+/* メイン画面 */
+.browser-content {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: #111318;
+}
+
+.new-tab-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+.new-tab-page h1 {
+  margin-bottom: 8px;
+  font-size: 42px;
+  letter-spacing: 1px;
+}
+
+.new-tab-page p {
+  color: #9298a6;
+}
+
+.page-placeholder {
+  padding: 30px;
+  overflow-wrap: anywhere;
+}
+
+.page-placeholder p {
+  color: #aeb4c0;
+}
+
+@media (max-width: 600px) {
+  .tab {
+    width: 140px;
+  }
+
+  .new-tab-page h1 {
+    font-size: 30px;
+  }
+
+  .browser-toolbar {
+    gap: 4px;
+    padding: 8px;
+  }
+}
